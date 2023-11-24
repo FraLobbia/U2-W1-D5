@@ -172,6 +172,7 @@ picture {
 /* --------------------- aside -------------------------------------------------------------------------- */
 aside {
     display: flex;
+    align-items: flex-start;
 }
 
 .asideArticle {
