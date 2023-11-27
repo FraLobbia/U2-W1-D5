@@ -25,7 +25,7 @@ header {
     border-bottom: 1px solid black;
     background-color: #FFC017;
     z-index: 99;
-    transition: 800ms;
+    transition: background-color 800ms;
 }
 
 .modifiedHeader {
@@ -200,6 +200,7 @@ aside {
 }
 
 .asideArticle {
+    width: 100%;
     margin: 20px;
     display: flex;
     justify-content: space-around;
@@ -214,7 +215,11 @@ aside {
     /* Impedisce al testo di andare a capo */
     text-overflow: ellipsis;
     /* Aggiunge i tre puntini */
+    display: flex;
+    flex-direction: column;
+
 }
+
 
 .asideArticleContent h2 {
     font-size: 1.4rem;
@@ -231,13 +236,20 @@ aside {
     display: inline-block;
     color: darkgrey;
     font-size: 0.1rem;
+    width: 30px;
+    height: 20px;
+    align-self: flex-end;
+
 }
 
 .asideArticle>img {
     width: 200px;
     height: 150px;
+
     object-fit: cover;
 }
+
+
 
 /* --------------------- col destra ------------------------ */
 
@@ -358,6 +370,12 @@ aside {
         flex-direction: column-reverse;
     }
 
+    .asideArticle>img {
+        width: 150px;
+        height: 100px;
+        object-fit: cover;
+    }
+
     #colonnaDX {
         width: 100%;
         align-items: center;
@@ -374,6 +392,10 @@ aside {
         align-items: center;
         justify-content: space-evenly
     }
+
+    #hero h1 {
+        font-size: 5rem;
+    }
 }
 
 @media screen and (max-width:725px) {
@@ -381,12 +403,28 @@ aside {
     ul li:nth-of-type(2) {
         display: none;
     }
+
+    #hero .incolonnamentoCentrale p {
+        display: none;
+    }
+
+    #hero {
+        height: 300px;
+    }
+
+
 }
 
 @media screen and (max-width:575px) {
 
     ul li:nth-of-type(3) {
         display: none;
+    }
+
+    .asideArticle>img {
+        width: 100px;
+        height: 75px;
+        object-fit: cover;
     }
 
 
@@ -397,18 +435,55 @@ aside {
     ul li:nth-of-type(4) {
         display: none;
     }
+
+    body {
+        width: 500px;
+    }
+
+    #hero div {
+        justify-content: flex-end;
+    }
+
+
+
+
 }
 
 @media screen and (max-width:400px) {
 
 
+    #hero .incolonnamentoCentrale p {
+        display: none;
+    }
+
+    #hero {
+        justify-content: center;
+        padding-top: 100px;
+    }
 
     .incolonnamentoCentrale {
         flex-direction: column;
-        justify-content: space-between;
+        height: 110px;
+        width: 100%;
     }
 
     header {
         height: 110px;
+        transition: unset;
     }
+
+    header .incolonnamentoCentrale {
+        justify-content: space-around;
+        height: 110px;
+    }
+
+    #getStartedButton {
+        position: relative;
+        bottom: 10px;
+    }
+
+    #hero h1 {
+        font-size: 5rem;
+    }
+
 }
